@@ -63,7 +63,7 @@ if(!window.THREE){var lm0=document.getElementById("lmsg");if(lm0)lm0.textContent
 window.addEventListener("error",function(e){var m=document.getElementById("lmsg"),l=document.getElementById("loading");if(m&&l&&!l.classList.contains("hidden"))m.textContent="Error: "+e.message});
 // ---- AdSense H5 Games Ads configuration ----
 // Publisher ID is inserted in AdSense client format. Keep test mode enabled while testing; turn it off only after Google approves the site and H5 Games Ads access.
-var CFG={test:false,adsenseClient:"ca-pub-4902372831369764",adsenseTest:true,ids:{}};
+var CFG={test:false,adsenseClient:"ca-pub-4902372831369764",adsenseTest:false,ids:{}};
 var $=function(i){return document.getElementById(i)};
 var data;try{data=JSON.parse(localStorage.getItem("deathRunnerSave")||"null")}catch(e){data=null}
 if(!data)data={coins:0,trophies:0,skin:0,owned:[0],jump:0,shield:0,delay:0,unlocked:1,done:{},mute:0};
