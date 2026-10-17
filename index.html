@@ -37,8 +37,20 @@ button.gold{background:linear-gradient(#ffd75a,#e5a010);color:#241700}button.gla
 #banner{position:absolute;left:0;right:0;bottom:var(--sab);height:50px;z-index:9;background:#000b;color:#8d86a8;font-size:12px;display:flex;align-items:center;justify-content:center;border-top:1px solid #fff2}
 .ad{position:absolute;inset:0;z-index:20;background:#000e;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold;text-align:center;padding:20px}
 .toast{position:absolute;top:calc(120px + var(--sat));left:50%;transform:translateX(-50%);background:#000c;padding:9px 16px;border-radius:20px;z-index:10;font-weight:bold;white-space:nowrap;pointer-events:none}
-</style></head>
-<body><div id="app"><canvas id="game"></canvas>
+</style>
+</head>
+<body>
+ <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .catch(error => console.error(
+        "Service worker registration failed:", error
+      ));
+  });
+}
+ </script>
+ <div id="app"><canvas id="game"></canvas>
 <div id="hud" class="hud hidden"><div class="row"><div class="pill">🪙 <span id="coins">0</span></div><div class="pill">⭐ <span id="score">0</span> <span id="mult" class="mu">x1</span></div><div class="pill"><span id="dist">0</span>m</div><div style="flex:1"></div><button id="pauseBtn" class="ic">⏸</button></div>
 <div class="row" style="margin-top:7px;flex-wrap:wrap"><div class="pill">LV <span id="lv">1</span></div><div class="pill" id="sh">🛡 0</div><div id="chips" class="row"></div></div>
 <div class="bars"><div><p class="lbl">LEVEL PROGRESS</p><div class="bar" id="prog"><i></i></div></div><div><p class="lbl">BOSS DISTANCE</p><div class="bar" id="gapb"><i></i></div></div><p class="lbl" id="spdTxt" style="margin:0"></p></div></div>
